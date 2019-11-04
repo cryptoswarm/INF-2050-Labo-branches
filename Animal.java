@@ -6,4 +6,10 @@ class Dog1 extends Animal{//Dog inherits Animal
        Animal d1 =new Dog1();
         System.out.println(d instanceof Animal);//true
     }
+
+
+
 }
+
+//This is a comment created in the new branch
+
