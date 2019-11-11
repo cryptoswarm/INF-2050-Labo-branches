@@ -317,91 +317,26 @@ public class Batnav5 {
      //* @param j  j est utilisé pour parcourire le tableau stockant les  coups tirés.
      **/
     public static void destroyBoat(char [][] boatPosition, int x, int y) {
-        int i=0;
-        int n=0;
-
-    //    for (int rowPlaySpace = 0; rowPlaySpace < boatPosition.length; rowPlaySpace++) {
-        //    for (int colPlaySpace = 0; colPlaySpace< boatPosition[rowPlaySpace].length; colPlaySpace++) {
-/**
-                if (rowPlaySpace == rowFeuInt[j] - 1 && colPlaySpace == colFeuInt[j]) {
-
-                    if (boatPosition[rowFeuInt[j] - 1][colFeuInt[j]] == '>') {
-
-                        boatPosition[rowFeuInt[j] - 1][colFeuInt[j]] = '*';
+        int i = 0;
+        int n = 0;
 
 
-                        destroyBoat(boatPosition, rowFeuInt, colFeuInt, j);
+        if (x >= 0 && x < 9 && y >= 0 && y < 18) {
+            if (boatPosition[x][y] == '~') {
 
-                    }
- **/
-if(x>=0 && x<9 && y>=0 && y<18) {
-    if (boatPosition[x][y] == '~') {
+                boatPosition[x][y] = 'o';
 
-        boatPosition[x][y] = 'o';
-
-    } else if (boatPosition[x][y] == '>' || boatPosition[x][y] == 'v') {
-        boatPosition[x][y] = '*';
-        destroyBoat(boatPosition, x, y + 1);
-        destroyBoat(boatPosition, x, y - 1);
-        destroyBoat(boatPosition, x + 1, y);
-        destroyBoat(boatPosition, x - 1, y);
-    }
-}
-/**
-                if (rowPlaySpace == rowFeuInt[j] - 1 && colPlaySpace == colFeuInt[j]) {
-
-                    while (boatPosition[rowFeuInt[j] - 1][colFeuInt[j] + i] == '>'){ //&& (colFeuInt[j]+i) < colPlaySpace){
-
-                        boatPosition[rowFeuInt[j] - 1][colFeuInt[j] + i] = '*';
-
-                        if (rowFeuInt[j] != 1 && rowFeuInt[j] != 9) {
-
-                            boatPosition[rowFeuInt[j] - 2][colFeuInt[j] + i] = 'o';
-                            boatPosition[rowFeuInt[j]][colFeuInt[j] + i] = 'o';
-                        }else if (rowFeuInt[j] == 1) {
-
-                            boatPosition[rowFeuInt[j]][colFeuInt[j] + i] = 'o';
-                        }else if (rowFeuInt[j] == 9) {
-
-                            boatPosition[rowFeuInt[j] - 2][colFeuInt[j] + i] = 'o';
-                            // boatPosition[rowFeuInt[j] - 1][colFeuInt[j] + i] = 'o';
-
-                        }
-                        i++;
-                    }
-
-
-                    while(boatPosition[rowFeuInt[j] - 1+n][colFeuInt[j]] == 'v' ){//&& rowFeuInt[j]<5){
-
-                        boatPosition[rowFeuInt[j] - 1+n][colFeuInt[j]] = '*';
-
-                        if ((rowFeuInt[j] > 1 && rowFeuInt[j] < 9)&&(colFeuInt[j] >1 && colFeuInt[j]<17 )){
-
-                            boatPosition[rowFeuInt[j] - 1+n][colFeuInt[j] + 1] = 'o';
-                            boatPosition[rowFeuInt[j]-1+n][colFeuInt[j] -1] = 'o';
-
-                        }else if (rowFeuInt[j] == 1 || colFeuInt[j]==1) {
-
-                            boatPosition[rowFeuInt[j]-1+n][colFeuInt[j] + 1] = 'o';
-
-                        }else if (rowFeuInt[j] == 9 || colFeuInt[j] == 17 ) {
-
-                            boatPosition[rowFeuInt[j] -1+n][colFeuInt[j] -1] = 'o';
-
-                        }
-                        n++;
-                    }
-
-
-                }else if (boatPosition[rowFeuInt[j] - 1][colFeuInt[j]] == '~') {
-
-                    boatPosition[rowFeuInt[j] - 1][colFeuInt[j]] = 'o';
-                }
-**/
+            } else if (boatPosition[x][y] == '>' || boatPosition[x][y] == 'v') {
+                boatPosition[x][y] = '*';
+                destroyBoat(boatPosition, x, y + 1);
+                destroyBoat(boatPosition, x, y - 1);
+                destroyBoat(boatPosition, x + 1, y);
+                destroyBoat(boatPosition, x - 1, y);
             }
+        }
+    }
 
-    //}
-//}
+
 
 
 
